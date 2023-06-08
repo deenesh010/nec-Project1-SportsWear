@@ -16,9 +16,11 @@
 }
 
 .logo {
-  color: #222;
-  font-size: 2rem;
+  color: #65a9c2;
+  font-size: 2.5rem;
   cursor: pointer;
+  text-decoration:none;
+  font-family: cursive;
 }
 
 .nav-menu {
@@ -60,15 +62,15 @@
   cursor: pointer;
   transition: ease-in-out;
 }
-button {
-  background: none;
+.btn {
+  background: wheat;
   border-radius: 4px;
 }
 .btn-si {
   margin-left: 5px;
 }
 
-button:hover {
+.btn:hover {
   background-color: #151516;
   color: #fff;
 }

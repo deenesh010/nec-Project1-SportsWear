@@ -28,5 +28,6 @@ const jerseyData = [
     desc: "Grab a basketball kit",
     price: "1000",
   },
+  
 ];
 export default jerseyData;

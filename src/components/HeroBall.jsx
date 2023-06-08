@@ -5,7 +5,9 @@ import "./heroStyle.css";
 const Hero = () => {
   return (
     <>
-      <h2 className="heroTitle">Get Player's Grade Jersey At Sports Pitch</h2>
+      <h2 className="heroTitle" style={{ color: "red" }}>
+        Get Playing Items At Sports Pitch
+      </h2>
       <div className="hero">
         {jerseyData.map((jersey, key) => {
           return (
