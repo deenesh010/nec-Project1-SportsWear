@@ -1,33 +1,32 @@
-import barca from "./barca.jpg";
-import argentina from "./argentina.jpg";
-import nepal from "./NEPAL.jpg";
-import basket from "./basket.jpg";
+import basketball from "./basketball.jpg";
+import football from "./football.jpg";
+import cricket from "./cricket.jpg";
+import hockey from "./hockey.jpg";
 
 const jerseyData = [
   {
-    title: "Barca kit",
-    image: barca,
-    desc: "Barcelona 2022/2023 Home kit.",
-    price: "1000",
+    title: "World Cup Ball",
+    image: football,
+    desc: "",
+    price: "3000",
   },
   {
-    title: "Champion",
-    image: argentina,
-    desc: "World Chapions kit",
-    price: "7000",
+    title: "Basketball",
+    image: basketball,
+    desc: "",
+    price: "1500",
   },
   {
-    title: "Nepal Cricket kit",
-    image: nepal,
-    desc: "Support our Nation at Asia Cup.",
-    price: "4000",
+    title: "Crickte Bat",
+    image: cricket,
+    desc: "",
+    price: "2000",
   },
   {
-    title: "Basketball kit",
-    image: basket,
-    desc: "Grab a basketball kit",
-    price: "1000",
+    title: "Hockey Stick",
+    image: hockey,
+    desc: "",
+    price: "1300",
   },
-  
 ];
 export default jerseyData;
