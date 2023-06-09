@@ -1,14 +1,18 @@
 import React from "react";
 import Hero from "../components/Hero";
-import HeroBall from "../components/HeroBall";
-import OtherItems from "../components/OtherItems";
+import jerseyData from "../data.js/jerseyData";
+import ballItems from "../data.js/ballItems";
+import otherData from "../data.js/otherData";
 
 const Home = () => {
   return (
     <div>
-      <Hero />
-      <HeroBall />
-      <OtherItems/>
+      <Hero
+        Data={jerseyData}
+        head="Get Player's Grade Jersey At Sports Pitch"
+      />
+      <Hero Data={ballItems} head=" Get Playing Items At Sports Pitch" />
+      <Hero Data={otherData} head=" Other Sporting Items" />
     </div>
   );
 };

@@ -7,10 +7,7 @@ function NavBar() {
     <div>
       <nav className="NavbarItems">
         <h1>
-          <NavLink
-            className="logo"
-            to="/"
-          >
+          <NavLink className="logo" to="/">
             Sports Pitch
           </NavLink>
         </h1>
@@ -67,22 +64,10 @@ function NavBar() {
         <div className="button">
           {/* <button>Sign Up</button>
           <button className="btn-si">Sign In</button> */}
-          <NavLink
-            to="/signup"
-            className="btn"
-            style={({ isActive }) => ({
-              color: isActive ? "blue" : "black",
-            })}
-          >
+          <NavLink to="/signup" className="btn">
             Sign Up
           </NavLink>
-          <NavLink
-            to="/signin"
-            className="btn btn-si"
-            style={({ isActive }) => ({
-              color: isActive ? "blue" : "black",
-            })}
-          >
+          <NavLink to="/signin" className="btn btn-si">
             Sign In
           </NavLink>
         </div>

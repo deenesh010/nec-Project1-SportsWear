@@ -14,16 +14,16 @@
   margin-left: 20px;
   height: 100%;
 }
-.card{
+.card {
   height: 470px;
 }
 
 .heroTitle {
-    position: relative;
-    top: 120px;
+  position: relative;
+  top: 120px;
   text-align: center;
-  color: rgb(150, 180, 21);
-  font-family: cursive;
+  color: rgb(9, 15, 101);
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .cardfoot {
