@@ -43,10 +43,11 @@ export const Register = () => {
             id="password"
             name="password"
           />
-          <button type="submit">Log In</button>
+          <button type="submit">Register</button>
         </form>
-        <Link to="/signin" className="switch">
-          Already have an account? Login here.
+        <h3> Already have an account?</h3>
+        <Link className="switch" to="/signin">
+          Login here.
         </Link>
       </div>
     </div>

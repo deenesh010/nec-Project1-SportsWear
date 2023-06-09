@@ -4,7 +4,7 @@
   align-items: center;
   padding: 0 30px;
   box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25);
-  width: 100%;
+  width: 90%;
   height: 80px;
   border-radius: 13px;
   font-family: serif;
@@ -72,7 +72,7 @@
 
 .btn:hover {
   background-color: #151516;
-  color: #fff;
+  color: #ffffff;
 }
 
 .menu-icons {

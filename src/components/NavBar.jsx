@@ -1,49 +1,90 @@
 import React from "react";
 import "./navStyle.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function NavBar() {
   return (
     <div>
       <nav className="NavbarItems">
         <h1>
-          <Link className="logo" to="/">
+          <NavLink
+            className="logo"
+            to="/"
+          >
             Sports Pitch
-          </Link>
+          </NavLink>
         </h1>
         <ul className="nav-menu">
           <li>
-            <Link className="nav-links" to="/">
+            <NavLink
+              className="nav-links"
+              to="/"
+              style={({ isActive }) => ({
+                color: isActive ? "blue" : "black",
+              })}
+            >
               <i className="fa-solid fa-house"></i>
               Home
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link className="nav-links">
+            <NavLink
+              to="/about"
+              className="nav-links"
+              style={({ isActive }) => ({
+                color: isActive ? "blue" : "black",
+              })}
+            >
               <i className="fa-solid fa-circle-info"></i>
               About
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/contact" className="nav-links">
+            <NavLink
+              to="/contact"
+              className="nav-links"
+              style={({ isActive }) => ({
+                color: isActive ? "blue" : "black",
+              })}
+            >
               <i className="fa-solid fa-address-book"></i>
               Contact
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link className="nav-links">
+            <NavLink
+              className="nav-links"
+              to="/cart"
+              style={({ isActive }) => ({
+                color: isActive ? "blue" : "black",
+              })}
+            >
               <i className="fa-solid fa-cart-shopping"></i>
               Cart Items
-            </Link>
+            </NavLink>
           </li>
         </ul>
         <div className="button">
           {/* <button>Sign Up</button>
           <button className="btn-si">Sign In</button> */}
-          <Link to="/signup" className="btn">Sign Up</Link>
-          <Link to="/signin" className="btn btn-si">
+          <NavLink
+            to="/signup"
+            className="btn"
+            style={({ isActive }) => ({
+              color: isActive ? "blue" : "black",
+            })}
+          >
+            Sign Up
+          </NavLink>
+          <NavLink
+            to="/signin"
+            className="btn btn-si"
+            style={({ isActive }) => ({
+              color: isActive ? "blue" : "black",
+            })}
+          >
             Sign In
-          </Link>
+          </NavLink>
         </div>
       </nav>
     </div>

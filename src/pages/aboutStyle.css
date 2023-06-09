@@ -1,0 +1,27 @@
+.about {
+  position: relative;
+  top: 81px;
+  color: black;
+  width: 100%;
+}
+
+.h2 {
+  color: hwb(196 12% 68%);
+  font-weight: bolder;
+  background-color: aliceblue;
+  width: 400px;
+  margin-left: 339px;
+  border-radius: 15px;
+}
+
+.p {
+  font-weight: bolder;
+  font-size: 1.6rem;
+  background-color: rgb(152, 175, 161);
+  border-radius: 10px;
+  color: rgb(153, 48, 19);
+}
+
+img {
+  height: 70vh;
+}

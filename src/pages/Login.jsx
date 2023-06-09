@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./signStyle.css"
+import "./signStyle.css";
 
 export const Login = (props) => {
   const [email, setEmail] = useState("");
@@ -36,7 +36,10 @@ export const Login = (props) => {
           />
           <button type="submit">Log In</button>
         </form>
-        <Link className="switch" to="/signup">Don't have an account? Register here.</Link>
+        <h3>Don't have an account?</h3>
+        <Link className="switch" to="/signup">
+          Register here.
+        </Link>
       </div>
     </div>
   );
