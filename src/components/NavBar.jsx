@@ -6,8 +6,10 @@ function NavBar() {
   return (
     <div>
       <nav className="NavbarItems">
-        <h1 >
-          <Link className="logo" to="/">Sports Pitch</Link>
+        <h1>
+          <Link className="logo" to="/">
+            Sports Pitch
+          </Link>
         </h1>
         <ul className="nav-menu">
           <li>
@@ -23,7 +25,7 @@ function NavBar() {
             </Link>
           </li>
           <li>
-            <Link className="nav-links">
+            <Link to="/contact" className="nav-links">
               <i className="fa-solid fa-address-book"></i>
               Contact
             </Link>
@@ -38,8 +40,10 @@ function NavBar() {
         <div className="button">
           {/* <button>Sign Up</button>
           <button className="btn-si">Sign In</button> */}
-          <Link className="btn">Sign Up</Link>
-          <Link className="btn btn-si">Sign In</Link>
+          <Link to="/signup" className="btn">Sign Up</Link>
+          <Link to="/signin" className="btn btn-si">
+            Sign In
+          </Link>
         </div>
       </nav>
     </div>
