@@ -3,30 +3,26 @@ import "./heroStyle.css";
 
 const Hero = ({ Data, head }) => {
   return (
-    <>
-      <h2 className="heroTitle">{head}</h2>
-      <div className="hero">
+    <div>
+      <div className="productTitle">{head}</div>
+      <div className="products">
         {Data.map((d, key) => {
           return (
-            <div key={key} className="h">
-              <div className="card column" style={{ width: "18rem" }}>
-                <img src={d.image} className="card-img-top" alt="..." />
-                <div className="card-body">
-                  <h5 className="card-title">{d.title}</h5>
-                  <p className="card-text text-primary">{d.desc}</p>
-                  <div className="cardfoot">
-                    <h3>Rs.{d.price}</h3>
-                    <button className="cart">
-                      <i className="fa-solid fa-cart-shopping"></i>
-                    </button>
-                  </div>
-                </div>
+            <div className="product">
+              <img src={d.image} alt=".." />
+              <div className="description">
+                <p>
+                  <b>{d.title}</b>
+                  <p className="text-primary">{d.desc}</p>
+                </p>
+                <p>Rs.{d.price}</p>
               </div>
+              <button className="addToCartBttn">Add To Cart</button>
             </div>
           );
         })}
       </div>
-    </>
+    </div>
   );
 };
 

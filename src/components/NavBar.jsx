@@ -17,7 +17,7 @@ function NavBar() {
               className="nav-links"
               to="/"
               style={({ isActive }) => ({
-                color: isActive ? "blue" : "black",
+                color: isActive ? "skyblue" : "black",
               })}
             >
               <i className="fa-solid fa-house"></i>
@@ -29,7 +29,7 @@ function NavBar() {
               to="/about"
               className="nav-links"
               style={({ isActive }) => ({
-                color: isActive ? "blue" : "black",
+                color: isActive ? "skyblue" : "black",
               })}
             >
               <i className="fa-solid fa-circle-info"></i>
@@ -41,7 +41,7 @@ function NavBar() {
               to="/contact"
               className="nav-links"
               style={({ isActive }) => ({
-                color: isActive ? "blue" : "black",
+                color: isActive ? "skyblue" : "black",
               })}
             >
               <i className="fa-solid fa-address-book"></i>
@@ -53,7 +53,7 @@ function NavBar() {
               className="nav-links"
               to="/cart"
               style={({ isActive }) => ({
-                color: isActive ? "blue" : "black",
+                color: isActive ? "skyblue" : "black",
               })}
             >
               <i className="fa-solid fa-cart-shopping"></i>

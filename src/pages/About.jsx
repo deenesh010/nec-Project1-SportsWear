@@ -3,6 +3,7 @@ import "./aboutStyle.css";
 import a1 from "../data.js/a1.jpg";
 import a2 from "../data.js/a2.jpg";
 import a3 from "../data.js/a3.jpg";
+import { NavLink } from "react-router-dom";
 
 const About = () => {
   return (
@@ -50,16 +51,21 @@ const About = () => {
           <img src={a2} class="d-block w-100" alt="..." />
           <div className="carousel-caption d-none d-md-block">
             {/* <h2 className="h2"></h2> */}
-            {/* <p className="p"></p> */}
+            <p className="p">
+              Sports Pitch is a website or app where buyers can see a catalog of
+              products and make electronic purchases.
+            </p>
           </div>
         </div>
         <div className="carousel-item">
           <img src={a3} className="d-block w-100" alt="..." />
           <div className="carousel-caption d-none d-md-block">
-            <h2 className="h2">We Provides Happiness</h2>
-            {/* <p className="p">
-              Some representative placeholder content for the third slide.
-            </p> */}
+            {/* <h2 className="h2"></h2> */}
+            <p className="p">
+              Connect With us by sending us a message
+              <br />
+              <NavLink to="/contact">here</NavLink>
+            </p>
           </div>
         </div>
       </div>
