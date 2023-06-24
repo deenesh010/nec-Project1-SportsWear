@@ -52,8 +52,8 @@ const About = () => {
           <div className="carousel-caption d-none d-md-block">
             {/* <h2 className="h2"></h2> */}
             <p className="p">
-              Sports Pitch is a website or app where buyers can see a catalog of
-              products and make electronic purchases.
+              Sports Pitch is a websites where buyers can see a catalog of
+              products and make online purchases.
             </p>
           </div>
         </div>

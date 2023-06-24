@@ -1,18 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Hero from "../components/Hero";
-import jerseyData from "../data.js/jerseyData";
-import ballItems from "../data.js/ballItems";
-import otherData from "../data.js/otherData";
+import axios from "axios";
 
 const Home = () => {
+  const [products, setProducts] = useState([]);
+
+  const getProducts = async () => {
+    const res = await axios.get("http://localhost:5000/products");
+    setProducts(res.data);
+  };
+
+  const handleDelete = async (id) => {
+    const res = await axios.delete(`http://localhost:5000/products/${id}`);
+    console.log(res.data);
+    if (res.data._id) {
+      setProducts(products.filter((p) => p._id !== res.data._id));
+    }
+  };
+
+  useEffect(() => {
+    getProducts();
+  }, []);
   return (
     <div>
       <Hero
-        Data={jerseyData}
-        head="Get Player's Grade Jersey At Sports Pitch"
+        Data={products}
+        head="Get All Items At Sports Pitch"
+        handleDelete={handleDelete}
       />
-      <Hero Data={ballItems} head=" Get Playing Items At Sports Pitch" />
-      <Hero Data={otherData} head=" Other Sporting Items" />
     </div>
   );
 };
