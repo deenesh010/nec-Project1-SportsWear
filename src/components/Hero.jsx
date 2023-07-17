@@ -1,7 +1,17 @@
 import React from "react";
 import "./heroStyle.css";
+import axios from "axios";
 
-const Hero = ({ Data, head, handleDelete }) => {
+const Hero = ({ Data, head, handleDelete, clickbtn }) => {
+  const getOneProduct = async (name, price, image, desc) => {
+    // const res = await axios.get(`http://localhost:5000/products/${id}`);
+    // let oneItem = res.data;
+    // console.log(oneItem);
+
+    let ip = { name, price, image, desc };
+    await axios.post("http://localhost:5000/cart", ip);
+  };
+
   return (
     <div>
       <div className="productTitle">{head}</div>
@@ -17,12 +27,39 @@ const Hero = ({ Data, head, handleDelete }) => {
                 </p>
                 <p>Rs.{d.price}</p>
               </div>
-              <button
-                className="addToCartBttn"
-                onClick={() => handleDelete(d._id)}
-              >
-                Delete Item
-              </button>
+
+              {(() => {
+                if (clickbtn === "delete") {
+                  return (
+                    <button
+                      className="addToCartBttn"
+                      onClick={() => handleDelete(d._id)}
+                    >
+                      {clickbtn}
+                    </button>
+                  );
+                } else if (clickbtn === "remove") {
+                  return (
+                    <button
+                      className="addToCartBttn"
+                      onClick={() => handleDelete(d._id)}
+                    >
+                      Remove from cart
+                    </button>
+                  );
+                } else {
+                  return (
+                    <button
+                      className="addToCartBttn"
+                      onClick={() => {
+                        getOneProduct(d.name, d.price, d.image, d.desc);
+                      }}
+                    >
+                      {clickbtn}
+                    </button>
+                  );
+                }
+              })()}
             </div>
           );
         })}

@@ -38,7 +38,7 @@
 
 .product:hover {
   transition: 0.3s ease-in;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .addToCartBttn {

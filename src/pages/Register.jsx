@@ -1,55 +1,68 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import "./signStyle.css";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { useNavigate, Link } from "react-router-dom";
 
-export const Register = () => {
+function Register({islogged,setIsLogged}) {
+  const history = useNavigate();
+
   const [email, setEmail] = useState("");
-  const [pass, setPass] = useState("");
-  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
+  async function submit(e) {
     e.preventDefault();
-    console.log(email);
-  };
+
+    try {
+      await axios
+        .post("http://localhost:5000/user/signup", {
+          email,
+          password,
+        })
+        .then((res) => {
+          if (res.data == "exist") {
+            alert("User already exists");
+          } else if (res.data == "notexist") {
+            history("/", { state: { id: email } });
+            setIsLogged(true)
+          }
+        })
+        .catch((e) => {
+          alert("wrong details");
+          console.log(e);
+        });
+    } catch (e) {
+      console.log(e);
+    }
+  }
 
   return (
-    <div className="cont">
-      <div className="auth-form-container">
-        <h2>Register</h2>
-        <form className="register-form" onSubmit={handleSubmit}>
-          <label htmlFor="name">Full name</label>
-          <input
-            value={name}
-            name="name"
-            onChange={(e) => setName(e.target.value)}
-            id="name"
-            placeholder="full Name"
-          />
-          <label htmlFor="email">email</label>
-          <input
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            type="email"
-            placeholder="youremail@gmail.com"
-            id="email"
-            name="email"
-          />
-          <label htmlFor="password">password</label>
-          <input
-            value={pass}
-            onChange={(e) => setPass(e.target.value)}
-            type="password"
-            placeholder="********"
-            id="password"
-            name="password"
-          />
-          <button type="submit">Register</button>
-        </form>
-        <h3> Already have an account?</h3>
-        <Link className="switch" to="/signin">
-          Login here.
-        </Link>
-      </div>
+    <div className="login">
+      <h1>Signup</h1>
+
+      <form action="POST">
+        <input
+          type="email"
+          onChange={(e) => {
+            setEmail(e.target.value);
+          }}
+          placeholder="Email"
+        />
+        <input
+          type="password"
+          onChange={(e) => {
+            setPassword(e.target.value);
+          }}
+          placeholder="Password"
+        />
+        <input type="submit" onClick={submit} />
+      </form>
+
+      <br />
+      <p>OR</p>
+      <br />
+
+      <Link to="/login">Login Page</Link>
     </div>
   );
-};
+}
+
+export default Register;

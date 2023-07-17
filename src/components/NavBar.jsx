@@ -2,7 +2,7 @@ import React from "react";
 import "./navStyle.css";
 import { NavLink } from "react-router-dom";
 
-function NavBar() {
+function NavBar({ islogged, setIsLogged }) {
   return (
     <div>
       <nav className="NavbarItems">
@@ -37,7 +37,7 @@ function NavBar() {
             </NavLink>
           </li>
           <li>
-            <NavLink
+            {/* <NavLink
               to="/contact"
               className="nav-links"
               style={({ isActive }) => ({
@@ -46,7 +46,7 @@ function NavBar() {
             >
               <i className="fa-solid fa-address-book"></i>
               Contact
-            </NavLink>
+            </NavLink> */}
           </li>
           <li>
             <NavLink
@@ -61,16 +61,49 @@ function NavBar() {
             </NavLink>
           </li>
         </ul>
-        <div className="button">
-          {/* <button>Sign Up</button>
-          <button className="btn-si">Sign In</button> */}
-          <NavLink to="/signup" className="btn">
-            Sign Up
-          </NavLink>
-          <NavLink to="/signin" className="btn btn-si">
-            Sign In
-          </NavLink>
-        </div>
+
+        {(() => {
+          if (islogged === true) {
+            return (
+              <>
+                <NavLink
+                  to="/add"
+                  className="nav-links"
+                  style={({ isActive }) => ({
+                    color: isActive ? "green" : "black",
+                  })}
+                >
+                  Add Products
+                </NavLink>
+                <NavLink
+                  to="/delete"
+                  className="nav-links"
+                  style={({ isActive }) => ({
+                    color: isActive ? "red" : "black",
+                  })}
+                >
+                  Delete Product
+                </NavLink>
+                <div className="button">
+                  <NavLink to="/login" className="btn btn-si">
+                    Log Out
+                  </NavLink>
+                </div>
+              </>
+            );
+          } else if (islogged === false) {
+            return (
+              <div className="button">
+                <NavLink to="/signup" className="btn">
+                  Sign Up
+                </NavLink>
+                <NavLink to="/login" className="btn btn-si">
+                  Log In
+                </NavLink>
+              </div>
+            );
+          }
+        })()}
       </nav>
     </div>
   );

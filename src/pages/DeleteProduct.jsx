@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Hero from "../components/Hero";
 import axios from "axios";
-import "../components/heroStyle.css"
 
-const Home = () => {
+const DeleteProduct = () => {
   const [products, setProducts] = useState([]);
 
   const getProducts = async () => {
@@ -11,7 +10,6 @@ const Home = () => {
     setProducts(res.data);
   };
 
- 
   const handleDelete = async (id) => {
     const res = await axios.delete(`http://localhost:5000/products/${id}`);
     console.log(res.data);
@@ -23,18 +21,16 @@ const Home = () => {
   useEffect(() => {
     getProducts();
   }, []);
-
   return (
     <div>
       <Hero
         Data={products}
         head="Get All Items At Sports Pitch"
         handleDelete={handleDelete}
-        // getOneProduct={getOneProduct}
-        clickbtn="Add To Cart"
+        clickbtn="delete"
       />
     </div>
   );
 };
 
-export default Home;
+export default DeleteProduct;
