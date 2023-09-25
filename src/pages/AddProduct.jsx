@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import "./addProduct.css";
+import { NavLink } from "react-router-dom";
 
 const AddProduct = () => {
   const [inputs, setInputs] = useState({});
@@ -21,47 +22,53 @@ const AddProduct = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Enter a product name:
-        <input
-          type="text"
-          name="name"
-          //   value={inputs.name}
-          required
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Enter price:
-        <input
-          type="number"
-          name="price"
-          //   value={inputs.price}
-          required
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Description:
-        <input
-          type="text"
-          name="desc"
-          //   value={inputs.desc}
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Image:
-        <input
-          type="text"
-          name="image"
-          //   value={inputs.image}
-          onChange={handleChange}
-        />
-      </label>
-      <input type="submit" />
-    </form>
+    <>
+      <h1>ADD AN ITEMS</h1>
+      <NavLink to="/admin" className="btn btn-si">
+        GO BACK
+      </NavLink>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Enter a product name:
+          <input
+            type="text"
+            name="name"
+            //   value={inputs.name}
+            required
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          Enter price:
+          <input
+            type="number"
+            name="price"
+            //   value={inputs.price}
+            required
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          Description:
+          <input
+            type="text"
+            name="desc"
+            //   value={inputs.desc}
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          Image:
+          <input
+            type="text"
+            name="image"
+            //   value={inputs.image}
+            onChange={handleChange}
+          />
+        </label>
+        <input type="submit" />
+      </form>
+    </>
   );
 };
 

@@ -66,27 +66,9 @@ function NavBar({ islogged, setIsLogged }) {
           if (islogged === true) {
             return (
               <>
-                <NavLink
-                  to="/add"
-                  className="nav-links"
-                  style={({ isActive }) => ({
-                    color: isActive ? "green" : "black",
-                  })}
-                >
-                  Add Products
-                </NavLink>
-                <NavLink
-                  to="/delete"
-                  className="nav-links"
-                  style={({ isActive }) => ({
-                    color: isActive ? "red" : "black",
-                  })}
-                >
-                  Delete Product
-                </NavLink>
                 <div className="button">
                   <NavLink to="/login" className="btn btn-si">
-                    Log Out
+                    <button onClick={() => setIsLogged(false)}>Log Out</button>
                   </NavLink>
                 </div>
               </>
@@ -99,6 +81,9 @@ function NavBar({ islogged, setIsLogged }) {
                 </NavLink>
                 <NavLink to="/login" className="btn btn-si">
                   Log In
+                </NavLink>
+                <NavLink to="/isadmin" className="btn btn-si">
+                  ADMIN
                 </NavLink>
               </div>
             );

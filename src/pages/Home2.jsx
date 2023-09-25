@@ -12,10 +12,6 @@ const Home = ({ islogged, setIsLogged }) => {
     setProducts(res.data);
   };
 
-  // const updatelogin=async()=>{
-  //   const res=await axios.patch("http://localhost:5000/user",islogged)
-  // }
-
   const handleDelete = async (id) => {
     const res = await axios.delete(`http://localhost:5000/products/${id}`);
     console.log(res.data);
@@ -31,12 +27,13 @@ const Home = ({ islogged, setIsLogged }) => {
   return (
     <div>
       <NavBar islogged={islogged} setIsLogged={setIsLogged} />
+
       <Hero
         Data={products}
         head="Get All Items At Sports Pitch"
         handleDelete={handleDelete}
         // getOneProduct={getOneProduct}
-        clickbtn="Add To Cart"
+        clickbtn="buy"
       />
     </div>
   );

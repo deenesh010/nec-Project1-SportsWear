@@ -47,6 +47,10 @@ const Hero = ({ Data, head, handleDelete, clickbtn }) => {
                       Remove from cart
                     </button>
                   );
+                } else if (clickbtn === "buy") {
+                  return (
+                    <button className="addToCartBttn">Log in to buy</button>
+                  );
                 } else {
                   return (
                     <button

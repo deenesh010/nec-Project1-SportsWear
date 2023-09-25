@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Hero from "../components/Hero";
 import axios from "axios";
+import { NavLink } from "react-router-dom";
 
 const DeleteProduct = () => {
   const [products, setProducts] = useState([]);
@@ -23,9 +24,12 @@ const DeleteProduct = () => {
   }, []);
   return (
     <div>
+      <NavLink to="/admin" className="btn btn-si">
+        GO BACK
+      </NavLink>
       <Hero
         Data={products}
-        head="Get All Items At Sports Pitch"
+        head="Delete Unavailable Items"
         handleDelete={handleDelete}
         clickbtn="delete"
       />

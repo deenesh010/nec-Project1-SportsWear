@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./login.css";
-import NavBar from "../components/NavBar";
+import { NavLink } from "react-router-dom";
 
-function Login({ islogged, setIsLogged }) {
+function Login() {
   const history = useNavigate();
 
   const [email, setEmail] = useState("");
@@ -15,20 +15,19 @@ function Login({ islogged, setIsLogged }) {
 
     try {
       await axios
-        .post("http://localhost:5000/user", {
+        .post("http://localhost:5000/admin", {
           email,
           password,
         })
         .then((res) => {
           if (res.data === "exist") {
-            history("/", { state: { id: email } });
-            setIsLogged(true);
+            history("/admin", { state: { id: email } });
           } else if (res.data === "notexist") {
             alert("Plese enter the correct credentials");
           }
         })
         .catch((e) => {
-          alert("wrong details");
+          //   alert(e);
           console.log(e);
         });
     } catch (e) {
@@ -38,9 +37,11 @@ function Login({ islogged, setIsLogged }) {
 
   return (
     <>
-      <NavBar islogged={islogged} setIsLogged={setIsLogged} />
+      <NavLink to="/" className="btn btn-si">
+        GO TO HOME
+      </NavLink>
       <div className="login">
-        <h1>Login</h1>
+        <h1>Login As an ADMIN</h1>
 
         <form action="POST">
           <input
@@ -63,10 +64,6 @@ function Login({ islogged, setIsLogged }) {
         <br />
         <p>OR</p>
         <br />
-
-        <Link to="/signup" className="link">
-          Signup Page
-        </Link>
       </div>
     </>
   );

@@ -1,0 +1,26 @@
+.login {
+  position: relative;
+  top: 90px;
+  width: 70%;
+  text-align: center;
+}
+
+form {
+  background-color: rgb(21, 136, 98);
+}
+
+.link {
+  text-decoration: none;
+  color: rebeccapurple;
+  font-size: 1.2rem;
+  margin-top: 15px;
+  padding-left: 960px;
+  padding-top: 15px;
+}
+
+.submit {
+  background-color: blanchedalmond;
+  border: none;
+  border-radius: 10px;
+  width: 150px;
+}

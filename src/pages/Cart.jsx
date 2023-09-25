@@ -2,8 +2,9 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Hero from "../components/Hero";
+import NavBar from "../components/NavBar";
 
-const Cart = () => {
+const Cart = ({ islogged, setIsLogged }) => {
   const [cartItems, setCartItems] = useState([]);
 
   const getCartItems = async () => {
@@ -22,16 +23,17 @@ const Cart = () => {
     }
   };
 
-
   return (
-    <div>
+    <>
+      <NavBar islogged={islogged} setIsLogged={setIsLogged} />
+
       <Hero
         Data={cartItems}
         head="YOUR CART ITEMS"
         clickbtn="remove"
         handleDelete={handleDelete}
       />
-    </div>
+    </>
   );
 };
 
